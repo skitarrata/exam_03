@@ -1,0 +1,62 @@
+1c1
+< #include <stdio.h>
+---
+> #include <stdlib.h>
+3d2
+< #include <string.h>
+5c4,5
+< #include <stdlib.h>
+---
+> #include <string.h>
+> #include <stdio.h>
+10c10
+< int	ft_strlen(char *str)
+---
+> int ft_strlen(char *str)
+13c13
+< 	while(str[i])
+---
+> 	while (str[i])
+18c18
+< int ft_error(char *str)
+---
+> int	ft_error(char *str)
+37d36
+< 	int read, pos;
+39c38,39
+< 	char *map;
+---
+> 	char ch;
+> 	int read, pos;
+42,43d41
+< 	char ch;
+< 	char id, color;
+44a43,44
+> 	char id, color;
+> 	char *map;
+47c47
+< 		return(ft_error(E1));
+---
+> 		return (ft_error(E1));
+49c49
+< 		(fscanf(f, "%d %d %c\n", &w, &h, &ch) != 3) ||
+---
+> 		(fscanf(f, "%d, %d, %c\n", &w, &h, &ch) != 3) ||
+54,55c54,55
+< 	while ((read = fscanf(f, "%c %f %f %f %f %c\n", &id, &cx, &cy, &width, &height, &color)) == 6)
+< 	{
+---
+> 	while ((read = fscanf(f, "%c,%f,%f,%f,%f,%c\n", &id,&cx,&cy,&width,&height,&color)) == 6)
+> 	{	
+57c57
+< 			break;
+---
+> 			break;	
+65c65
+< 				if (pos == 1 || (pos == 2 && id == 'R'))
+---
+> 				if ((pos == 2 && id == 'R') || pos == 1)
+70c70
+< 	if (read != -1)
+---
+> 	if (read != 1)
